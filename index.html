@@ -245,24 +245,13 @@
                 marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
             }
 
-            // $(window).scroll(function () {
-            //     $(".item").each(function (i) {
-            //         var bottom_of_element = $(this).offset().top + $(this).outerHeight() / 3;
-            //         var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            //         if (bottom_of_window > bottom_of_element) {
-            //             $(this).addClass("active");
-            //         }
-            //     });
-            // });
-            // const window = document.querySelector('html');
-            window.addEventListener("scroll", () => {
-                document.getElementByClassName("item").each(function (i) {
-                    let bottom_of_element = this.offset().top + this.outerHeight() / 3;
-                    let bottom_of_window = window.scrollTop() + window.height();
+            $(window).scroll(function () {
+                $(".item").each(function (i) {
+                    var bottom_of_element = $(this).offset().top + $(this).outerHeight() / 3;
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
 
                     if (bottom_of_window > bottom_of_element) {
-                        this.classList.add("active");
+                        $(this).addClass("active");
                     }
                 });
             });
