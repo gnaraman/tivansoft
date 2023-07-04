@@ -415,7 +415,7 @@ body.onMenu {
 		font-weight: bold;
 		line-height: 1;
    }
-	.HeaderMenu .oneDepth:after {
+	.HeaderMenu .menuItem .oneDepth:after {
 		display: none;
    }
 	/* .HeaderMenu .twoDepthContainer {
