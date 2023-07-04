@@ -20,6 +20,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html{
+    width: 100%;
+    overflow-x: hidden;
+}
 body {
     width: 100%;
 	font-weight:300;
