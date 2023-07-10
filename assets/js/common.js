@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    const html = document.querySelector("html");
     const body = document.querySelector("body");
     const toggler = document.querySelector(".ToggleMenuButton");
     const menu = document.querySelector(".HeaderMenu");
@@ -15,20 +16,20 @@ $(document).ready(function () {
     const filter = document.querySelector(".filter");
 
     btnInquire.addEventListener("click", (e) => {
-        e.preventDefault();
+        e.stopPropagation();
         modalWrapper.classList.add("active");
-        body.classList.add("active");
+        html.classList.add("active");
     });
 
     btnInquireClose.addEventListener("click", () => {
         modalWrapper.classList.remove("active");
-        body.classList.remove("active");
+        html.classList.remove("active");
     });
 
     filter.addEventListener("click", () => {
         if (modalWrapper.classList.contains("active")) {
             modalWrapper.classList.remove("active");
-            body.classList.remove("active");
+            html.classList.remove("active");
         }
     });
 
@@ -83,6 +84,20 @@ $(document).ready(function () {
             document.querySelector(activeCont).classList.add("active");
         });
     }
+
+    const tabList2 = document.querySelectorAll(".js-tab-ver02 li");
+    for (var i = 0; i < tabList2.length; i++) {
+        tabList2[i].querySelector("a").addEventListener("click", function (e) {
+            e.preventDefault();
+            for (var j = 0; j < tabList2.length; j++) {
+                // 나머지 버튼 클래스 제거
+                tabList2[j].classList.remove("active");
+            }
+            this.parentNode.classList.add("active");
+        });
+    }
+    
+
 
     $(function () {
         if (location.hash == "#muscat") {

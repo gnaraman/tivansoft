@@ -60,7 +60,7 @@
                 <div class="container">
                     <!-- tab nav -->
                     <div class="tab_list_wrap">
-                        <ul class="tab_list js-tab">
+                        <ul class="tab_list js-tab-ver02">
                             <li class="active"><a href="#all">전체</a></li>
                             <li><a href="#sism">SI/SM</a></li>
                             <li><a href="#platform">PLATFORM</a></li>
@@ -184,7 +184,7 @@
                     <!-- //전체 -->
 
                     <!-- SI/SM -->
-                    <div id="sism" class="tab_content">
+                    <!-- <div id="sism" class="tab_content">
                         <div class="inner">
                             <ul class="list_project">
                                 <li>
@@ -295,11 +295,11 @@
                                 </div>
                             </div>
                         </section>
-                    </div>
+                    </div> -->
                     <!-- //SI/SM -->
 
                     <!-- platform -->
-                    <div id="platform" class="tab_content">
+                    <!-- <div id="platform" class="tab_content">
                         <div class="inner">
                             <ul class="list_project">
                                 <li>
@@ -416,7 +416,7 @@
                                 </div>
                             </div>
                         </section>
-                    </div>
+                    </div> -->
                     <!-- //platform -->
                     <!-- //tab content -->
                 </div>
@@ -454,24 +454,28 @@
                             <form>
                                 <div class="formRow">
                                     <label for="userName">이름</label>
-                                    <input type="text" name="userName" id="userName" maxlength="10" />
+                                    <input type="text" name="userName" id="userName" maxlength="10" placeholder="이름을 입력해주세요."/>
                                 </div>
                                 <div class="formRow">
                                     <label for="userEmail">이메일 </label>
                                     <input type="text" name="userEmail" id="userEmail" maxlength="50" placeholder="답변 받으실 이메일 주소를 입력해주세요." />
-                                    <!-- <p class="txt_alert">이메일 양식이 올바르지 않습니다.</p> -->
+                                    <!-- 이메일 양식이 맞지 않을 경우 노출 : <p class="txt_alert">이메일 양식이 올바르지 않습니다.</p> -->
                                 </div>
                                 <div class="formRow">
                                     <label for="userCpn">회사명</label>
-                                    <input type="text" name="userCpn" id="userCpn" maxlength="30" />
+                                    <input type="text" name="userCpn" id="userCpn" maxlength="30" placeholder="회사명을 입력해주세요."/>
                                 </div>
                                 <div class="formRow">
                                     <label for="userTitle">제목</label>
-                                    <input type="text" name="userTitle" id="userTitle" maxlength="30" />
+                                    <input type="text" name="userTitle" id="userTitle" maxlength="30" placeholder="제목을 입력해주세요."/>
                                 </div>
                                 <div class="formRow">
                                     <label for="userInqTxt">문의내용</label>
                                     <textarea id="userInqTxt" name="userInqTxt" maxlength="1000" placeholder="궁금한 내용을 남겨주세요."></textarea>
+                                </div>
+                                <div class="formRow">
+                                    <label for="userFile">첨부파일</label>
+                                    <input type="file" name="userFile" id="userFile" maxlength="30" />
                                 </div>
                                 <div class="formRow agreement">
                                     <p class="js-agree-open">
@@ -492,7 +496,7 @@
                                         <li>그 외 사항은 개인정보 처리방침을 준수합니다.</li>
                                     </ul>
                                 </div>
-                                <button type="submit" class="submitBtn">등록</button>
+                                <button type="submit" class="submitBtn" disabled>등록</button>
                             </form>
                         </div>
                     </div>

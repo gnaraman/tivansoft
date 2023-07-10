@@ -22,6 +22,7 @@ footer, header, hgroup, menu, nav, section {
 }
 html{
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
 }
 body {
@@ -82,11 +83,18 @@ em {
     --bg-gradient3: linear-gradient(45deg,to bottom right,#e2f0fa,#a6dbcb);
     --white: #fff
 }
-
+*{
+	text-size-adjust: none;
+	-webkit-text-size-adjust:none;
+	-webkit-overflow-scrolling:touch;
+}
 /* common */
+html.active{
+    overflow: hidden;
+}
 body.active {
     overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .m-show {
