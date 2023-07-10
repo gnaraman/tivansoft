@@ -4,30 +4,31 @@ $(document).ready(function () {
     const menu = document.querySelector(".HeaderMenu");
 
     toggler.addEventListener("click", () => {
-        body.classList.toggle("onMenu");
+        body.classList.toggle("active");
         toggler.classList.toggle("active");
         menu.classList.toggle("active");
     });
 
     const modalWrapper = document.querySelector(".ModalWrapper");
-    const btnInquire = document.querySelector(".btn_contact");
+    const btnInquire = document.querySelector(".btn_inquire");
     const btnInquireClose = document.querySelector(".js-close-modal");
     const filter = document.querySelector(".filter");
 
-    btnInquire.addEventListener("click", () => {
+    btnInquire.addEventListener("click", (e) => {
+        e.preventDefault();
         modalWrapper.classList.add("active");
-        body.classList.add("onMenu");
+        body.classList.add("active");
     });
 
     btnInquireClose.addEventListener("click", () => {
         modalWrapper.classList.remove("active");
-        body.classList.remove("onMenu");
+        body.classList.remove("active");
     });
 
     filter.addEventListener("click", () => {
         if (modalWrapper.classList.contains("active")) {
             modalWrapper.classList.remove("active");
-            body.classList.remove("onMenu");
+            body.classList.remove("active");
         }
     });
 
@@ -35,18 +36,9 @@ $(document).ready(function () {
     const agreeContent = document.querySelector(".agreementView");
 
     agreeView.addEventListener("click", () => {
+        agreeView.classList.toggle("active");
         agreeContent.classList.toggle("active");
     });
-
-    const root = document.documentElement;
-    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
-    const marqueeContent = document.querySelector("ul.marquee-content");
-
-    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
-
-    for (let i = 0; i < marqueeElementsDisplayed; i++) {
-        marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
-    }
 
     $(window).scroll(function () {
         $(".js-fadein").each(function (i) {
@@ -59,34 +51,85 @@ $(document).ready(function () {
         });
     });
 
+    // $(".js-fadein-2").addClass("active");
+
     var mobile_show = false;
     $(window).bind("resize", function () {
         mobile_show = false;
-        $(".gnb_mobile, .overlay, body").removeClass("active");
-    });
-
-    //새소식 tab 이동
-    $(".tab_depth01 > li > p:first-child > a").on("click", function (e) {
-        e.preventDefault();
-    });
-    $(".tab_depth01 > li > p:first-child > a").on("mouseenter focus", function () {
-        var subList = $(this).parent().next();
-        siblingsList = $(".tab_depth02");
-
-        siblingsList.hide();
-        subList.show();
-        $(this).parent().parent().siblings().removeClass("active");
-        $(this).parents("li").addClass("active");
+        $("menu .ModalWrapper, body").removeClass("active");
     });
 
     // tab
+    const tabList = document.querySelectorAll(".js-tab li");
+    const contents = document.querySelectorAll(".tab_content");
+    let activeCont = ""; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
 
-    $(".tab_lecture > li > p > a").bind("click", function (e) {
-        e.preventDefault();
+    for (var i = 0; i < tabList.length; i++) {
+        tabList[i].querySelector("a").addEventListener("click", function (e) {
+            e.preventDefault();
+            for (var j = 0; j < tabList.length; j++) {
+                // 나머지 버튼 클래스 제거
+                tabList[j].classList.remove("active");
 
-        if ($(this).parents("li").siblings().hasClass("active") == true) {
-            $(this).parents("li").siblings().removeClass("active");
-            $(this).parents("li").addClass("active");
+                // 나머지 컨텐츠 display:none 처리
+                contents[j].classList.remove("active");
+            }
+
+            // 버튼 관련 이벤트
+            this.parentNode.classList.add("active");
+
+            // 버튼 클릭시 컨텐츠 전환
+            activeCont = this.getAttribute("href");
+            document.querySelector(activeCont).classList.add("active");
+        });
+    }
+
+    $(function () {
+        if (location.hash == "#muscat") {
+        } else if (location.hash == "#muscatPeople") {
+            $(".tab_list").find("li.active").removeClass("active");
+            $(".tab_list").find("li").eq(1).addClass("active");
+            $(".tab_content").removeClass("active");
+            $("#muscatPeople").addClass("active");
         }
     });
+
+    $(".list_project").slick({
+        mobileFirst: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        dots: true,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: "unslick",
+            },
+        ],
+    });
+
+    $(window).on("resize", function () {
+        $(".list_project").slick("resize");
+    });
+
+    // const itemTab = document.querySelector('.js-tab-filter');
+    // const items = document.querySelector('.js-list-filter');
+    // const item = document.querySelectorAll('.js-list-filter li');
+
+    // itemTab.addEventListener('click', (e) => {
+    //   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    //   if (filter == null) {
+    //     return;
+    //   }
+    //   item.forEach((item) => {
+    //     if (filter === '*' || filter === item.dataset.type) {
+    //       item.style.display = "block"
+    //     } else {
+    //       item.style.display = "none"
+    //     }
+    //   });
+    // });
 });
