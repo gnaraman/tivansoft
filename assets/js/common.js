@@ -19,17 +19,21 @@ $(document).ready(function () {
         e.stopPropagation();
         modalWrapper.classList.add("active");
         html.classList.add("active");
+        body.classList.add("active");
     });
 
     btnInquireClose.addEventListener("click", () => {
         modalWrapper.classList.remove("active");
         html.classList.remove("active");
+        body.classList.remove("active");
     });
 
     filter.addEventListener("click", () => {
         if (modalWrapper.classList.contains("active")) {
             modalWrapper.classList.remove("active");
             html.classList.remove("active");
+        body.classList.remove("active");
+
         }
     });
 
