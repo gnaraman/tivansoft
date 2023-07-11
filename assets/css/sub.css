@@ -1214,11 +1214,11 @@
     display: block;
 }
 
-.project .inner {
+.project_area .inner {
     padding: 0 30px;
 }
 
-.project .list_area .inner {
+.project_area .list_area .inner {
     max-width: 754px;
 }
 
