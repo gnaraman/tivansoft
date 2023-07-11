@@ -5,6 +5,7 @@ $(document).ready(function () {
     const menu = document.querySelector(".HeaderMenu");
 
     toggler.addEventListener("click", () => {
+        html.classList.toggle("active");
         body.classList.toggle("active");
         toggler.classList.toggle("active");
         menu.classList.toggle("active");
