@@ -181,7 +181,7 @@
                     <h1>온라인 문의하기</h1>
                     <div class="InquireFormArea">
                         <div class="inner">
-                            <form>
+                            <form class="form_inquire">
                                 <div class="formRow">
                                     <label for="userName">이름</label>
                                     <input type="text" name="userName" id="userName" maxlength="10" placeholder="이름을 입력해주세요."/>
@@ -205,7 +205,9 @@
                                 </div>
                                 <div class="formRow">
                                     <label for="userFile">첨부파일</label>
-                                    <input type="file" name="userFile" id="userFile" maxlength="30" />
+                                    <div class="file-upload-wrapper" data-text="파일 선택">
+                                        <input type="file" class="inpt-file-upload" name="userFile" id="userFile" maxlength="30" />
+                                    </div>
                                 </div>
                                 <div class="formRow agreement">
                                     <p class="js-agree-open">

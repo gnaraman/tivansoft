@@ -930,8 +930,7 @@ body.active {
 } */
 .InquireFormArea .formRow input[name="userFile"]{
     position: relative;
-    padding: 10px 90px 10px 10px;
-
+    padding: 7px 80px 7px 10px;
 }
 .InquireFormArea .formRow input[name="userFile"]::file-selector-button {
     position: absolute;
@@ -952,3 +951,65 @@ body.active {
     transition: background-color 0.5s;
     cursor: pointer;
 }
+
+
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+    height: 45px;
+  }
+  .file-upload-wrapper:after {
+    content: attr(data-text);
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    padding: 0px 10px;
+    display: block;
+    width: calc(100% - 22px);
+    pointer-events: none;
+    z-index: 20;
+    height: 43px;
+    line-height: 43px;
+    color: #999;
+    border-radius: 6px;
+    font-weight: 300;
+    border: 1px solid var(--sub-txt-color2);
+  }
+  .file-upload-wrapper:before {
+    content: "파일선택";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    height: 35px;
+    background-color: #0c3365;
+    color: #fff;
+    font-weight: 500;
+    z-index: 25;
+    font-size: 13px;
+    line-height: 35px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    pointer-events: none;
+    border-radius: 6px;
+  }
+  .file-upload-wrapper:hover:before {
+    /* background: #3d8c63; */
+  }
+  .file-upload-wrapper input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+  }

@@ -56,8 +56,6 @@ $(document).ready(function () {
         });
     });
 
-    // $(".js-fadein-2").addClass("active");
-
     var mobile_show = false;
     $(window).bind("resize", function () {
         mobile_show = false;
@@ -73,36 +71,28 @@ $(document).ready(function () {
         tabList[i].querySelector("a").addEventListener("click", function (e) {
             e.preventDefault();
             for (var j = 0; j < tabList.length; j++) {
-                // 나머지 버튼 클래스 제거
                 tabList[j].classList.remove("active");
-
-                // 나머지 컨텐츠 display:none 처리
                 contents[j].classList.remove("active");
             }
-
-            // 버튼 관련 이벤트
             this.parentNode.classList.add("active");
-
-            // 버튼 클릭시 컨텐츠 전환
             activeCont = this.getAttribute("href");
             document.querySelector(activeCont).classList.add("active");
         });
     }
 
+    // tab - project
     const tabList2 = document.querySelectorAll(".js-tab-ver02 li");
     for (var i = 0; i < tabList2.length; i++) {
         tabList2[i].querySelector("a").addEventListener("click", function (e) {
             e.preventDefault();
             for (var j = 0; j < tabList2.length; j++) {
-                // 나머지 버튼 클래스 제거
                 tabList2[j].classList.remove("active");
             }
             this.parentNode.classList.add("active");
         });
     }
     
-
-
+    // tab - href
     $(function () {
         if (location.hash == "#muscat") {
         } else if (location.hash == "#muscatPeople") {
@@ -113,6 +103,7 @@ $(document).ready(function () {
         }
     });
 
+    // project - slider
     $(".list_project").slick({
         mobileFirst: true,
         slidesToShow: 1,
@@ -134,21 +125,9 @@ $(document).ready(function () {
         $(".list_project").slick("resize");
     });
 
-    // const itemTab = document.querySelector('.js-tab-filter');
-    // const items = document.querySelector('.js-list-filter');
-    // const item = document.querySelectorAll('.js-list-filter li');
-
-    // itemTab.addEventListener('click', (e) => {
-    //   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
-    //   if (filter == null) {
-    //     return;
-    //   }
-    //   item.forEach((item) => {
-    //     if (filter === '*' || filter === item.dataset.type) {
-    //       item.style.display = "block"
-    //     } else {
-    //       item.style.display = "none"
-    //     }
-    //   });
-    // });
+    // file 
+    $(".form_inquire").on("change", ".inpt-file-upload", function(){ 
+        $(this).parent(".file-upload-wrapper").attr("data-text",         
+        $(this).val().replace(/.*(\/|\\)/, '') );
+    });
 });
