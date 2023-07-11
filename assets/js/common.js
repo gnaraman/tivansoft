@@ -125,6 +125,23 @@ $(document).ready(function () {
         $(".list_project").slick("resize");
     });
 
+    $(".list_visual").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        fade: true,
+        dots: false,
+        arrows: false
+        // responsive: [
+        //     {
+        //         breakpoint: 768,
+        //         settings: "unslick",
+        //     },
+        // ],
+    });
+
     // file 
     $(".form_inquire").on("change", ".inpt-file-upload", function(){ 
         $(this).parent(".file-upload-wrapper").attr("data-text",         
