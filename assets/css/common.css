@@ -367,34 +367,7 @@ body.active {
   .ToggleMenuButton.active > span::after {
 	transform: rotate(225deg);
   }
-/* .HeaderMenu .twoDepthContainer {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	background-color: var(--white);
-	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.06);
-}
-.HeaderMenu .twoDepthContainer .twoDepthInner {
-	position: relative;
-}
-.HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth {
-	display: block;
-	padding: 15px 0;
-	margin: 0 20px;
-	font-size: 15px;
-	font-weight: 400;
-	white-space: nowrap;
-	letter-spacing: 0;
-	color: var(--sub-txt-color2);
-}
-.HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth:hover, .HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth.on {
-	font-weight: bold;
-	color: var(--main-color);
-}
-.HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth:last-of-type {
-	margin-right: 10px;
-} */
+
 @media (max-width: 768px) {
 	.HeaderMenu {
 		position: fixed;
@@ -433,12 +406,6 @@ body.active {
         border-right: 1px solid #838d98;
         transform: rotate(45deg);
    }
-	/* .HeaderMenu .menuItem[data-link]:after {
-		background: url('/images/common/icon_newLink.png');
-		width: 14px;
-		height: 14px;
-		background-size: 14px 14px;
-   } */
 	.HeaderMenu .oneDepth {
         font-style: 18px;
 		font-weight: bold;
@@ -447,34 +414,6 @@ body.active {
 	.HeaderMenu .menuItem .oneDepth:after {
 		display: none;
    }
-	/* .HeaderMenu .twoDepthContainer {
-		position: static;
-		display: block;
-		background-color: inherit;
-		box-shadow: none;
-   }
-	.HeaderMenu .twoDepthContainer .twoDepthInner {
-		display: block;
-		padding: 0;
-		transform: none;
-   }
-	.HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth {
-		position: relative;
-		padding: 0;
-		margin: 25px 0 0 !important;
-		color: #a0a8b1;
-   }
-	.HeaderMenu .twoDepthContainer .twoDepthInner .twoDepth:after {
-		content: '';
-		position: absolute;
-		right: 0;
-		top: 50%;
-		width: 8px;
-		height: 14px;
-		transform: translateY(-50%);
-		background: url('/images/common/icon_arrow_r.png');
-		background-size: 8px 14px;
-   } */
 }
 .ToggleMenuButton {
 	z-index: 1000;
@@ -490,23 +429,6 @@ body.active {
     color: transparent;
     background: none;
 }
-/* .ToggleMenuButton:after {
-	content: '';
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	width: 18px;
-	height: 18px;
-	transform: translate(-50%, -50%);
-	background: url('/images/common/icon_mo_toggle.png');
-	background-size: 18px 18px;
-}
-.ToggleMenuButton.open:after {
-	width: 21px;
-	height: 21px;
-	background: url('/images/common/icon_close.png');
-	background-size: 21px 21px;
-} */
 
 /* footer */
 .FooterWrapper {
@@ -924,10 +846,6 @@ body.active {
 .agreementView.active{
     display: block;
 }
-
-/* .InquireFormArea .formRow input[name="userFile"] {
-    width: calc(100% - 70px);
-} */
 .InquireFormArea .formRow input[name="userFile"]{
     position: relative;
     padding: 7px 80px 7px 10px;
