@@ -136,6 +136,7 @@ $(document).ready(function () {
         fade: true,
         speed: 1000,
         dots: false,
+        pauseOnFocus: false,
         prevArrow : $('.btn_arrow_prev'), 
         nextArrow : $('.btn_arrow_next'), 
         // responsive: [
