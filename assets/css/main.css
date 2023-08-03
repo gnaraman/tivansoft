@@ -60,6 +60,9 @@
     background-image: url('../images/main/btn_pause.svg');
     vertical-align: -2px;
 }
+.btn_pause.on{
+    background-image: url('../images/main/btn_pause_on.svg');
+}
 
 .indicator_wrap .paging span + span{
     margin-left: 4px;
@@ -74,6 +77,25 @@
 }
 .indicator_wrap .paging .total{
     opacity: 0.3;
+}
+.TopVisual .list_visual{
+    position: relative;
+}
+.TopVisual .list_visual::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 32px;
+    background-image: url('../images/main/ico_scroll.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+
+    
 }
 
 .TopVisual .list_visual li{
@@ -186,6 +208,9 @@
 }
 
 @media (max-width: 768px) {
+    .TopVisual .list_visual::before{
+        display: none;
+    }
 
     .TopVisual .list_visual li {
         height: calc(100vh - 50px);
