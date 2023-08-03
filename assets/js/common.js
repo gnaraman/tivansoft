@@ -137,6 +137,7 @@ $(document).ready(function () {
         speed: 1000,
         dots: false,
         pauseOnFocus: false,
+        draggable: true,
         prevArrow : $('.btn_arrow_prev'), 
         nextArrow : $('.btn_arrow_next'), 
         // responsive: [
