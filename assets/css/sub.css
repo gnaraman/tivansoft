@@ -2,8 +2,6 @@
 
 .intro {
     padding: 100px 0 130px;
-    /* background: linear-gradient(180deg,#f9fafb,#fff);
-    background: var(--bg-gradient1); */
     text-align: center;
 }
 
@@ -16,7 +14,6 @@
     position: relative;
     height: 430px;
     padding: 0;
-    /* background: url(../images/sub/sub_visual_about.jpg) center center / cover; */
     background: url(../images/sub/sub_visual_about.jpg) center center;
     background-size: auto 100%;
     animation: zoom-out 8s ease-out;
@@ -79,10 +76,6 @@
     max-width: auto;
     margin-top: 25px;
 }
-
-/* .intro .description {
-    padding: 112px 0 0
-} */
 
 .intro .description p {
     margin-bottom: 60px;
@@ -472,9 +465,6 @@
     color: var(--sub-txt-color1);
 }
 
-/* .Comment p:first-of-type {
-    margin-top: 25px;
-} */
 .Comment .btn_download {
     display: block;
     max-width: 240px;
@@ -1139,8 +1129,6 @@ i.ico_arrow{
     font-weight: 500;
     line-height: 1.1em;
 }
-
-.list_project_text {}
 
 .list_project_text li {
     padding: 17px 0 15px;

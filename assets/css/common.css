@@ -933,7 +933,6 @@ body.active {
   }
 
   /* alert */
-
 .layerPop_wrapper .layerPop_container {
     display: block;
     position: fixed;
@@ -954,7 +953,7 @@ body.active {
     align-items: center;
 }
 .layerPop_footer {
-    margin-top: 30px;
+    margin-top: 32px;
     text-align: center;
 }
 
@@ -986,10 +985,6 @@ body.active {
 .layerPop_content .btn.md+.md {
     margin-left: 8px;
 }
-
-.layerPop_footer {
-    margin-top: 32px;
-}
 .overlay {
     position: fixed;
     width: 100%;
@@ -997,8 +992,6 @@ body.active {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.40);
-    z-index: 11;
-
 
 }
 .btn_close{
@@ -1009,9 +1002,6 @@ body.active {
     line-height: 0;
     text-indent: -9999px;
 }
-
-
-
 .btn {
     display: inline-block;
     height: 42px;
