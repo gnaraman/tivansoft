@@ -1206,6 +1206,12 @@ i.ico_arrow{
 }
 
 @media (max-width: 768px) {
+    .btn_lg{
+        height: 48px;
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 50px;
+    }
     .tab_content {
         padding: 185px 0 0;
     }
@@ -1235,6 +1241,10 @@ i.ico_arrow{
 
     .visual_area {
         height: 330px;
+    }
+
+    .visual_area.people {
+        height: unset;
     }
 
     .visual_area.muscat .center {
