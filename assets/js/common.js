@@ -126,6 +126,14 @@ $(document).ready(function () {
         $(".list_project").slick("resize");
     });
     
+    $('.list_visual').on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){ 
+
+        var i = (currentSlide ? currentSlide : 0) + 1;
+       
+        $('.paging .current').text(i);
+        $('.paging .total').text(slick.slideCount);
+       
+     });
 
     $(".list_visual").slick({
         slidesToShow: 1,
@@ -134,7 +142,7 @@ $(document).ready(function () {
         autoplay: true,
         autoplaySpeed: 4700,
         fade: true,
-        speed: 1000,
+        speed: 100,
         dots: false,
         pauseOnFocus: false,
         draggable: true,
@@ -148,14 +156,7 @@ $(document).ready(function () {
         // ],
     });
 
-    $('.list_visual').on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){ 
-
-        var i = (currentSlide ? currentSlide : 0) + 1;
-       
-        $('.paging .current').text(i);
-        $('.paging .total').text(slick.slideCount);
-       
-     });
+    
 
     $(".btn_pause").on("click", function(){
         if($(this).hasClass('on') === false){
